@@ -12,7 +12,7 @@ import { IoNewspaperOutline } from "react-icons/io5"
 const Sidebar = () => {
 
   return (
-    <div className="flex flex-col justify-start items-center py-8 w-full ">
+    <div className="flex flex-col justify-start items-center py-8 w-full  ">
       <div className="flex flex-col gap-6 text-[#A5A9B9]">
         <div>
           <img src={logo} />
