@@ -8,11 +8,11 @@ import { useAppDispatch, useAppSelector } from "../app/hooks";
 import { useParams } from "react-router-dom";
 
 const Profile: FC = () => {
-  const datas = useAppSelector((state) => state.person.users);
+  const datas = useAppSelector((state) => state.person.isLoading);
   console.log(datas);
 
   const id = useParams();
-  console.log(IDBCursor);
+
   return (
     <div className="grid grid-cols-6">
       <div className="hidden lg:block lg:col-span-2 xl:col-span-1">
