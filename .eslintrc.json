@@ -21,7 +21,10 @@
   "rules": {
     "prettier/prettier": [
       "error",
-      { "usePrettierrc": false }
+      {
+        "usePrettierrc": false,
+        "endOfLine": "auto"
+      }
     ],
     "react/react-in-jsx-scope": "off",
     "jsx-a11y/accessible-emoji": "off",

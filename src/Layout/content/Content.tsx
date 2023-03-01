@@ -1,20 +1,20 @@
-import React from "react";
+import React, { FC } from "react";
 import userPhoto from "../../assets/indir.jfif";
 import cup from "../../assets/cup.png";
 import { MdLocationOn } from "react-icons/md";
-import {CiClock2} from "react-icons/ci";
-import {GrCertificate} from "react-icons/gr";
+import { CiClock2 } from "react-icons/ci";
+import { GrCertificate } from "react-icons/gr";
 import { IoNewspaperOutline } from "react-icons/io5";
 
 import Button from "../../components/Button";
 import Share from "./Share";
 
-const Content = () => {
+const Content: FC = () => {
   return (
     <div>
       <div className="flex gap-5">
         <div>
-          <img className="rounded-full" src={userPhoto} />
+          <img alt="" className="rounded-full" src={userPhoto} />
         </div>
         <div className="w-full py-3">
           <div className="lg:flex justify-between ">
@@ -39,33 +39,32 @@ const Content = () => {
             mollitia, molestiae quas vel sint commodi repudiandae consequuntur
             voluptatum laborum.
           </div>
-        </div>        
+        </div>
       </div>
 
-
       <div className="flex items-center gap-2 sm:gap-10 mt-16">
-        <div className="flex items-center gap-3" >
+        <div className="flex items-center gap-3">
           <div className="text-gray-400">
-            <CiClock2 size={35}/>
-          </div> 
+            <CiClock2 size={35} />
+          </div>
           <div className="text-xs ">
             <h3 className="font-bold">3+ Years Job</h3>
             <h3 className="text-gray-400 mt-1">Experienced</h3>
           </div>
         </div>
-        <div className="flex items-center gap-3" >
+        <div className="flex items-center gap-3">
           <div className="text-gray-400">
-            <img className="h-8" src={cup}/>
-          </div> 
+            <img alt="" className="h-8" src={cup} />
+          </div>
           <div className="text-xs ">
             <h3 className="font-bold">5 Certificates</h3>
             <h3 className="text-gray-400 mt-1">Achieved</h3>
           </div>
         </div>
-        <div className="flex items-center gap-3" >
+        <div className="flex items-center gap-3">
           <div className="text-gray-400">
-            <IoNewspaperOutline color="gray" size={35}/>
-          </div> 
+            <IoNewspaperOutline color="gray" size={35} />
+          </div>
           <div className="text-xs ">
             <h3 className="font-bold">2 Intership</h3>
             <h3 className="text-gray-400 mt-1">Completed</h3>
