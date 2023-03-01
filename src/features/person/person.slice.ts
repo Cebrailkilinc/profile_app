@@ -1,25 +1,28 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { getAllPerson } from "../service/personService";
+
+interface UsersState {
+  users: [];
+  isLoading: boolean;
+  errorMessage: string;
+}
 
 const initialState = {
-    users: [
-      {
-        key: "2",
-        firstName: "Jim",
-        lastName: "Green",
-        age: 42,
-        address: "London No. 1 Lake Park",
-        tags: ["loser"],
-      },
-    ],
-  };
-  
-  const PersonSlice = createSlice({
-    name: "person",
-    initialState,
-    reducers: {
-      
+  isLoading: false,
+  errorMessage: "",
+  users: [],
+};
+
+const PersonSlice = createSlice({
+  name: "person",
+  initialState,
+  reducers: {},
+  extraReducers: {
+    [getAllPerson.pending.toString()]: (state) => {
+      state.isLoading = true;
     },
-  });
-  
-  export const { } = PersonSlice.actions;
-  export default PersonSlice.reducer;
+  },
+});
+
+//export const {} = PersonSlice.actions;
+export default PersonSlice.reducer;
