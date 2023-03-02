@@ -4,7 +4,7 @@ import axios from "axios";
 export const getAllPerson = createAsyncThunk("user/getAllPerson", async () => {
   try {
     const { data } = await axios.get(
-      `https://jsonplaceholder.typicode.com/posts`
+      `https://6255745f52d8738c6922364f.mockapi.io/users`
     );
     return data;
   } catch (error) {
@@ -14,14 +14,14 @@ export const getAllPerson = createAsyncThunk("user/getAllPerson", async () => {
 
 export const getPersonById = createAsyncThunk(
   "user/getPersonById",
-  async (page, { rejectWithValue }) => {
+  async (id: any) => {
     try {
       const { data } = await axios.get(
-        `https://reqres.in/api/users?per_page=2&page=${page}`
+        `https://6255745f52d8738c6922364f.mockapi.io/users/${id}`
       );
       return data;
     } catch (error) {
-      return rejectWithValue(error.message);
+      return error.message;
     }
   }
 );

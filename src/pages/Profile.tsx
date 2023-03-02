@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useEffect } from "react";
 import Content from "../Layout/content/Content";
 import Pro from "../Layout/content/Pro";
 import Navbar from "../Layout/navbar/Navbar";
@@ -6,12 +6,21 @@ import Sidebar from "../Layout/sidebar/Sidebar";
 
 import { useAppDispatch, useAppSelector } from "../app/hooks";
 import { useParams } from "react-router-dom";
+import { getAllPerson, getPersonById } from "../features/service/personService";
 
 const Profile: FC = () => {
-  const datas = useAppSelector((state) => state.person.isLoading);
-  console.log(datas);
+  const { isLoading } = useAppSelector((state) => state.person);
+  console.log(isLoading);
 
-  const id = useParams();
+  const dispatch = useAppDispatch();
+
+  const { id } = useParams();
+  console.log(id);
+
+  useEffect(() => {
+    dispatch(getAllPerson());
+    dispatch(getPersonById(id));
+  }, []);
 
   return (
     <div className="grid grid-cols-6">
@@ -24,7 +33,7 @@ const Profile: FC = () => {
         </div>
         <div className="grid grid-cols-6 gap-10 mt-5 px-3 sm:px-10">
           <div className="col-span-6 xl:col-span-4">
-            <Content />
+            <Content isLoading={isLoading} />
           </div>
           <div className=" hidden xl:block xl:col-span-2">
             <Pro />

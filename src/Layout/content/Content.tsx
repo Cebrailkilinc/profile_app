@@ -1,25 +1,32 @@
 import React, { FC } from "react";
-import userPhoto from "../../assets/indir.jfif";
-import cup from "../../assets/cup.png";
+
 import { MdLocationOn } from "react-icons/md";
 import { CiClock2 } from "react-icons/ci";
 import { GrCertificate } from "react-icons/gr";
 import { IoNewspaperOutline } from "react-icons/io5";
 
+import { useAppDispatch, useAppSelector } from "../../app/hooks";
+
 import Button from "../../components/Button";
 import Share from "./Share";
 
-const Content: FC = () => {
+interface Den {
+  isLoading: boolean;
+}
+
+const Content: FC<Den> = ({ isLoading }: { isLoading: boolean }) => {
+  console.log(isLoading + " is loading");
+  console.log("first");
   return (
     <div>
       <div className="flex gap-5">
         <div>
-          <img alt="" className="rounded-full" src={userPhoto} />
+          {/* <img alt="" className="rounded-full" src={userPhoto} /> */}
         </div>
         <div className="w-full py-3">
           <div className="lg:flex justify-between ">
             <div className="flex flex-col gap-2">
-              <h1 className="text-3xl font-semibold">Justins Mark</h1>
+              <h1 className="text-3xl font-semibold">Justins Marks</h1>
               <div className="flex items-center gap-2">
                 <MdLocationOn color="gray" />
                 <h2 className="text-[#8B94A4] text-sm">Newyork, USA</h2>
@@ -54,7 +61,7 @@ const Content: FC = () => {
         </div>
         <div className="flex items-center gap-3">
           <div className="text-gray-400">
-            <img alt="" className="h-8" src={cup} />
+            {/* <img alt="" className="h-8" src={cup} /> */}
           </div>
           <div className="text-xs ">
             <h3 className="font-bold">5 Certificates</h3>
