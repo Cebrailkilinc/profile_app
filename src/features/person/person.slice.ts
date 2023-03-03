@@ -16,7 +16,7 @@ const PersonSlice = createSlice({
   extraReducers: (builder) => {
     //GET ALL USERS
     builder.addCase(getAllPerson.pending, (state: UsersState) => {
-      state.isLoading = false;
+      state.isLoading = true;
     });
     builder.addCase(
       getAllPerson.fulfilled,

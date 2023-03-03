@@ -21,3 +21,7 @@ export interface UsersState {
 export interface TodoState {
   users: RootObject;
 }
+export interface ISideMenu {
+  success: boolean;
+  message: string;
+}

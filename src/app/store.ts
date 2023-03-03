@@ -1,9 +1,11 @@
 import { Action, configureStore, ThunkAction } from "@reduxjs/toolkit";
+import MenuSlice from "../features/menu/menu.slice";
 import PersonSlice from "../features/person/person.slice";
 
 export const store = configureStore({
   reducer: {
     person: PersonSlice,
+    menu: MenuSlice,
   },
 });
 
