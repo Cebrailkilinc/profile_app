@@ -1,17 +1,25 @@
-/* eslint-disable @typescript-eslint/explicit-function-return-type */
-import React from "react";
-import { useState } from "react";
+import React, { Suspense } from "react";
+
+//CSS
 import "./App.css";
+
+//COMPONENTS
 import Profile from "./pages/Profile";
 import Home from "./pages/Home";
-import { Routes, Route, Outlet, Link } from "react-router-dom";
+import Spinner from "./components/Spinner";
 
+//ROUTERS
+import { Routes, Route } from "react-router-dom";
+
+// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/profile/:id" element={<Profile />} />
-    </Routes>
+    <Suspense fallback={<Spinner />}>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="profile/:id" element={<Profile />} />
+      </Routes>
+    </Suspense>
   );
 }
 
